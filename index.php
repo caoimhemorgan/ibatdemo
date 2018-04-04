@@ -1,3 +1,5 @@
 <?php
 
-echo "Hello World form Heroku Server";
+echo "<h1>Hello World form Heroku Server";
+
+echo "<p> My first paragraph </p>";
