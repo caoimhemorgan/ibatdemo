@@ -1,0 +1,55 @@
+<head>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<style>
+#showDonutsBtn { color:lightslategray; background-color: whitesmoke; padding: 10px; margin-bottom: 20px;}
+#showDonutsContent { background-color: whitesmoke; border: 1px solid grey; padding: 10px; color: grey;  }
+
+</style>
+<script>
+
+//Import JSON data
+$(function (){
+
+var url = 'https://ibat-caoimhe.herokuapp.com/donuts.json';
+$.ajax ({
+dataType: "json",
+url: url,
+
+success: function (result) {
+    console.log ("Json loaded");
+
+}
+
+
+});
+
+});
+
+$('#showDonutsBtn').on('click', function () {
+
+console.log ("Button clicked");
+var changedValue = $(this).val();
+
+//Hide all showDonutsContent
+ $('.showDonutsContent').hide();
+
+//Build up an id and then use it to hide / show items	
+var showDonutsContent = '#' + changedValue; // eg # + mon
+$(showDonutsContent).show();
+});
+
+</script>
+</head>
+
+
+<body>
+<div>
+    <button id = "showDonutsBtn"> Show available donuts </button>
+</div>
+
+<div id = "showDonutsContent">
+
+
+</div>
+</body>
